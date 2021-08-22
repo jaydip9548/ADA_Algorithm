@@ -1,65 +1,59 @@
-import java.util.Scanner;
+package A;
 
-public class Merge_Sort {
+import java.util.*;
+class class1{
+    static int ans[] = new int[5];
+    public static void main (String[] args) {
+        int arr[] = {10,34,76,23,90};
+        int n = arr.length;
 
-	public static void Devide(int a[],int first,int last) {
-	
-	
-		int mid=0;
-		
-		if(first < last) {
-			mid = (first + last) / 2;
-			
-			Devide(a,first,mid);
-			Devide(a, mid+1,last);
-			
-			Merge(a,first,last,mid);
-		}
-		
-	}
-	
-	public static void Merge(int a[],int first,int last,int mid) {
-		int i = first;
-	    int j = mid+1;
-		int k = 0;    // i with 0, j with mid+1 and k = 0
-		int b[] = new int[a.length];
-		
-		while(i <= mid && j  <= last) {
-			if(a[i] < a[j]) {
-				b[k] = a[i];
-				i++;
-			}
-			else {
-				b[k] = a[j];
-				j++;
-			}
-			k++;
-		}
-		if(i > mid) {
-			while(j <= last) {
-				b[k] = a[j];
-				j++;
-			}
-		}
-		else {
-			b[k] = a[i];
-			i++;
-		}
-		
-		for(int i1 : b) {
-			System.out.println(i1);
-		}
-		
-	}
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Number You Want to Insert:");
-		int n = sc.nextInt();
-		int a[] = new int [n];
-		for(int i=0; i<n;i++) {
-			a[i] = sc.nextInt();
-		}
-		
-		Devide(a,0,n-1);
-	}
+        mergeSort(arr,0,n-1);
+        System.out.println(Arrays.toString(ans));
+    }
+
+    public static void mergeSort(int arr[],int l,int r){
+        if(l < r){
+            int mid = (l+r)/2;
+            mergeSort(arr,l,mid);
+            mergeSort(arr,mid+1,r);
+            merge(arr,l,mid,r,ans);
+        }
+    }
+
+    public static void merge(int arr[],int l,int mid,int r,int ans[]){
+        int i = l;
+        int j = mid+1;
+        int k=0;
+
+        while(i <= mid && j <= r){
+            if(arr[i] <= arr[j]){
+                ans[k] =arr[i];
+                i++;
+            }else{
+                ans[k] = arr[j];
+                j++;
+            }
+            k++;
+        }
+
+        if(i > mid){
+            while(j <= r){
+                ans[k] = arr[j];
+                j++;
+                k++;
+            }
+        }else{
+            while(i <= mid){
+                ans[k] = arr[i];
+                k++;
+                i++;
+            }
+        }
+    }
+
 }
+
+
+
+
+
