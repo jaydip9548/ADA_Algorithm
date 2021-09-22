@@ -5,9 +5,9 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class stack {
-   static int arr[] = new int[100];
-   static int top = -1;
-   static int max = 100;
+    static int arr[] = new int[10];
+    static int top = -1;
+    static int max = 10;
 
     public static void main(String[] args) {
 
@@ -37,47 +37,45 @@ public class stack {
 
         System.out.println(stack);
 //        System.out.println("Poped Item "+stack.pop());
-        System.out.println("Toped Element  "+stack.peek());
+        System.out.println("Toped Element  " + stack.peek());
 //        returns the index of element else -1
         System.out.println(stack.search(30));
     }
 
     private static void display() {
-        while(top != -1){
+        while (top != -1) {
             System.out.println(arr[top--]);
         }
     }
 
     private static void peek() {
-        if(top == -1){
+        if (top == -1) {
             System.out.println("Stack is underflow");
             return;
-        }else{
-            System.out.println("Peek value is : "+arr[top]);
+        } else {
+            System.out.println("Peek value is : " + arr[top]);
         }
     }
 
     private static void pop() {
 
-        if(top == -1){
+        if (top == -1) {
             System.out.println("Stack is underflow");
             return;
-        }else{
-            System.out.println(arr[top] +" is removed");
+        } else {
+            System.out.println(arr[top] + " is removed");
             arr[top] = 0;
             top--;
         }
     }
 
     private static void push(int i) {
-        if(top == max-1 )
-        {
+        if (top == max - 1) {
             System.out.println("Stack is Overflow ");
             return;
-        }
-        else{
+        } else {
             top++;
-            arr[top ] = i;
+            arr[top] = i;
         }
 
     }
