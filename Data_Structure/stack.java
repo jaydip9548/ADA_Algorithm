@@ -40,6 +40,8 @@ public class stack {
         System.out.println("Toped Element  " + stack.peek());
 //        returns the index of element else -1
         System.out.println(stack.search(30));
+
+        System.out.println(stack.isEmpty());
     }
 
     private static void display() {
