@@ -3,6 +3,9 @@ package Graph;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+//https://youtu.be/nt8uN6pQrnw
+
+
 public class Adjacency_List {
 
     private static LinkedList<Integer> adj[];
