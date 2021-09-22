@@ -1,6 +1,7 @@
 package Data_Structure;
 
 
+import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -19,9 +20,23 @@ public class stack {
 
 //        Stack data Structure in Collections
 
-        ImplementedStack();
+//        ImplementedStack();
+
+//        using LinkedList
+        LinklistImplementation();
 
 
+    }
+
+    private static void LinklistImplementation() {
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.push(100);
+        ll.push(200);
+        ll.push(300);
+        ll.push(400);
+//        System.out.println(ll.pop());
+        System.out.println(ll.peekFirst());
+        System.out.println(ll.contains(200)); // search
     }
 
     private static void ImplementedStack() {
@@ -36,12 +51,12 @@ public class stack {
         stack.push(98);
 
         System.out.println(stack);
-//        System.out.println("Poped Item "+stack.pop());
-        System.out.println("Toped Element  " + stack.peek());
+//        System.out.println("Poped Item "+stack.pop());   // O(1)
+        System.out.println("Toped Element  " + stack.peek());  // O(1)
 //        returns the index of element else -1
-        System.out.println(stack.search(30));
+        System.out.println(stack.search(30));   //  O(1)
 
-        System.out.println(stack.isEmpty());
+        System.out.println(stack.isEmpty());     // O(1)
     }
 
     private static void display() {
