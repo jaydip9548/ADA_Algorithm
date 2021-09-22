@@ -1,6 +1,9 @@
 package Data_Structure;
 
 
+import java.util.Scanner;
+import java.util.Stack;
+
 public class stack {
    static int arr[] = new int[100];
    static int top = -1;
@@ -8,10 +11,35 @@ public class stack {
 
     public static void main(String[] args) {
 
-        push(10);push(20);push(30);push(40);
-        pop();
-        peek();
-        display();
+//        push(10);push(20);push(30);push(40);
+//        pop();
+//        peek();
+//        display();
+
+
+//        Stack data Structure in Collections
+
+        ImplementedStack();
+
+
+    }
+
+    private static void ImplementedStack() {
+        Scanner sc = new Scanner(System.in);
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(10);
+        stack.push(89);
+        stack.push(30);
+        stack.push(48);
+        stack.push(16);
+        stack.push(98);
+
+        System.out.println(stack);
+//        System.out.println("Poped Item "+stack.pop());
+        System.out.println("Toped Element  "+stack.peek());
+//        returns the index of element else -1
+        System.out.println(stack.search(30));
     }
 
     private static void display() {
