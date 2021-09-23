@@ -11,6 +11,7 @@ public class Adjacency_List {
 
     private static LinkedList<Integer> adj[];
 
+
     public Adjacency_List(int v) {
         adj = new LinkedList[v];
 
@@ -25,6 +26,7 @@ public class Adjacency_List {
         adj[destination].add(source);
     }
 
+    //    Minimum distance between source and destination
     public static int bfs(int source, int destination) {
         boolean vis[] = new boolean[adj.length];
         int parent[] = new int[adj.length];
@@ -56,8 +58,29 @@ public class Adjacency_List {
             cur = parent[cur];
             distance++;
         }
-        System.out.print(source );
+        System.out.print(source);
         return distance;
+    }
+//    check path exists betn source and destination.
+
+    private static boolean dfsUtil(int source, int destination, boolean vis[]) {
+
+        if (source == destination) return true;
+
+        for (int neighbor : adj[source]) {
+            if (!vis[neighbor]) {
+                vis[neighbor] = true;
+                boolean conn = dfsUtil(neighbor, destination, vis);
+                if (conn) return true;
+            }
+        }
+        return true;
+    }
+
+    public static void dfs(int s, int d) {
+        boolean vis[] = new boolean[adj.length];
+        vis[s] = true;
+        System.out.println("Possible :" + dfsUtil(s, d, vis));
     }
 
     public static void main(String[] args) {
@@ -67,15 +90,22 @@ public class Adjacency_List {
 
         Adjacency_List list = new Adjacency_List(v);
 
-        list.addEdge(0, 1);
-        list.addEdge(1, 2);
-        list.addEdge(2, 3);
-        list.addEdge(3, 4);
-        list.addEdge(0, 4);
-        list.addEdge(2, 4);
+//        list.addEdge(0, 1);
+//        list.addEdge(1, 2);
+//        list.addEdge(2, 3);
+//        list.addEdge(3, 4);
+//        list.addEdge(0, 4);
+//        list.addEdge(2, 4);
 
 //        display();
-        bfs(0, 4);
+//        bfs(0, 4);
+
+        list.addEdge(0, 4);
+        list.addEdge(4, 3);
+        list.addEdge(3, 2);
+        list.addEdge(2, 1);
+        list.addEdge(1, 2);
+        dfs(0, 1);
     }
 
     static void display() {
