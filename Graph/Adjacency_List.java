@@ -3,6 +3,7 @@ package Graph;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
 
 //https://youtu.be/nt8uN6pQrnw
 
@@ -83,6 +84,28 @@ public class Adjacency_List {
         System.out.println("Possible :" + dfsUtil(s, d, vis));
     }
 
+    public static boolean dfsStack(int source, int destination) {
+        boolean vis[] = new boolean[adj.length];
+
+        Stack<Integer> st = new Stack<>();
+
+        st.push(source);
+        vis[source] = true;
+
+        while (!st.isEmpty()) {
+            int curr = st.pop();
+
+            if (curr == destination) return true;
+            for (int neighbor : adj[curr]) {
+                if (!vis[neighbor]) {
+                    st.push(neighbor);
+                    vis[neighbor] = true;
+                }
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
 
         int v = 5;
@@ -105,7 +128,8 @@ public class Adjacency_List {
         list.addEdge(3, 2);
         list.addEdge(2, 1);
         list.addEdge(1, 2);
-        dfs(0, 1);
+//        dfs(0, 1);
+        System.out.println("Possible "+dfsStack(0,4));;
     }
 
     static void display() {
