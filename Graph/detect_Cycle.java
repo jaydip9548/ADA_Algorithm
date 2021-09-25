@@ -2,6 +2,8 @@ package Graph;
 
 import java.util.LinkedList;
 
+// DFS Algo
+
 public class detect_Cycle {
 
     public static LinkedList<Integer> adj[];
