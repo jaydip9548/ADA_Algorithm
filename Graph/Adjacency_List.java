@@ -113,23 +113,23 @@ public class Adjacency_List {
 
         Adjacency_List list = new Adjacency_List(v);
 
-//        list.addEdge(0, 1);
-//        list.addEdge(1, 2);
-//        list.addEdge(2, 3);
-//        list.addEdge(3, 4);
-//        list.addEdge(0, 4);
-//        list.addEdge(2, 4);
+        list.addEdge(0, 1);
+        list.addEdge(1, 2);
+        list.addEdge(2, 3);
+        list.addEdge(3, 4);
+        list.addEdge(0, 4);
+        list.addEdge(2, 4);
 
 //        display();
-//        bfs(0, 4);
+        bfs(0, 2);
 
-        list.addEdge(0, 4);
-        list.addEdge(4, 3);
-        list.addEdge(3, 2);
-        list.addEdge(2, 1);
-        list.addEdge(1, 2);
-//        dfs(0, 1);
-        System.out.println("Possible "+dfsStack(0,4));;
+//        list.addEdge(0, 4);
+//        list.addEdge(4, 3);
+//        list.addEdge(3, 2);
+//        list.addEdge(2, 1);
+//        list.addEdge(1, 2);
+////        dfs(0, 1);
+//        System.out.println("Possible "+dfsStack(0,4));;
     }
 
     static void display() {
