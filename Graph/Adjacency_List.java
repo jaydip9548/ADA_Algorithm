@@ -71,11 +71,11 @@ public class Adjacency_List {
         for (int neighbor : adj[source]) {
             if (!vis[neighbor]) {
                 vis[neighbor] = true;
-                boolean conn = dfsUtil(neighbor, destination, vis);
-                if (conn) return true;
+                boolean isConnected = dfsUtil(neighbor, destination, vis);
+                if (isConnected) return true;
             }
         }
-        return true;
+        return false;
     }
 
     public static void dfs(int s, int d) {
