@@ -4,13 +4,13 @@ import java.util.LinkedList;
 
 // DFS Algo
 
-public class detect_Cycle {
+public class L2_Directed_Cycle_Detection {
 
     public static LinkedList<Integer> adj[];
     public static boolean vis[], recursiveStack[];
 
 
-    public detect_Cycle(int v) {
+    public L2_Directed_Cycle_Detection(int v) {
         adj = new LinkedList[v];
         vis = new boolean[v];
         recursiveStack = new boolean[v];
@@ -59,7 +59,7 @@ public class detect_Cycle {
 
         int node = 4;
 //        initialize adj, visited and recursiveStack array
-        detect_Cycle dc = new detect_Cycle(node);
+        L2_Directed_Cycle_Detection dc = new L2_Directed_Cycle_Detection(node);
 
 //        Directed Graph detect cycle is there or not
 

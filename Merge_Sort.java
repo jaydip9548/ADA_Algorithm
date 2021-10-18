@@ -1,56 +1,70 @@
-package A;
+//package A;
 
 import java.util.*;
-class class1{
-    static int ans[] = new int[5];
-    public static void main (String[] args) {
-        int arr[] = {10,34,76,23,90};
-        int n = arr.length;
 
-        mergeSort(arr,0,n-1);
-        System.out.println(Arrays.toString(ans));
+class Merge_Sort {
+
+    public static void main(String[] args) {
+
+        int arr[] ={30,20,56,32,87,44};
+        int lb = 0;
+        int ub = arr.length - 1;
+
+        mergesort(arr, lb, ub);
+        System.out.println(Arrays.toString(arr));
     }
 
-    public static void mergeSort(int arr[],int l,int r){
-        if(l < r){
-            int mid = (l+r)/2;
-            mergeSort(arr,l,mid);
-            mergeSort(arr,mid+1,r);
-            merge(arr,l,mid,r,ans);
+    private static void mergesort(int[] arr, int lb, int ub) {
+
+        if (lb < ub) {
+            int mid = (lb + ub) / 2;
+            mergesort(arr, lb, mid);
+            mergesort(arr, mid + 1, ub);
+            merge(arr, lb, mid, ub);
         }
     }
 
-    public static void merge(int arr[],int l,int mid,int r,int ans[]){
-        int i = l;
-        int j = mid+1;
-        int k=0;
+    private static void merge(int[] arr, int lb, int mid, int ub) {
 
-        while(i <= mid && j <= r){
-            if(arr[i] <= arr[j]){
-                ans[k] =arr[i];
-                i++;
-            }else{
-                ans[k] = arr[j];
-                j++;
-            }
-            k++;
-        }
+        int ans[] = new int[arr.length];
 
-        if(i > mid){
-            while(j <= r){
-                ans[k] = arr[j];
-                j++;
-                k++;
-            }
-        }else{
-            while(i <= mid){
+        int i = lb;
+        int j = mid + 1;
+        int k = lb;
+
+        while (i <= mid && j <= ub) {
+            if (arr[i] < arr[j]) {
                 ans[k] = arr[i];
-                k++;
                 i++;
+                k++;
+            } else {
+                ans[k] = arr[j];
+                j++;
+                k++;
             }
         }
-    }
 
+
+        if (i > mid) {
+            while (j <= ub) {
+                ans[k] = arr[j];
+                j++;
+                k++;
+            }
+        }
+        if (j > ub) {
+            while (i <= mid) {
+                ans[k] = arr[i];
+                i++;
+                k++;
+            }
+        }
+// ------------------------------- IMPORTANT --------
+        for (int p = lb; p <= ub; p++) {
+            arr[p] = ans[p];
+        }
+// ----------------------------------------------------
+    }
 }
 
 

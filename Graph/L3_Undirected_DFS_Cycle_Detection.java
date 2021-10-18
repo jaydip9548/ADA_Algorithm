@@ -3,11 +3,11 @@ package Graph;
 import java.util.LinkedList;
 import java.util.Stack;
 
-public class Undirected_DFS_Cycle_Detection {
+public class L3_Undirected_DFS_Cycle_Detection {
     public static LinkedList<Integer> adj[];
     public static boolean vis[];
 
-    public Undirected_DFS_Cycle_Detection(int v) {
+    public L3_Undirected_DFS_Cycle_Detection(int v) {
         adj = new LinkedList[v];
         vis = new boolean[v];
         for (int i = 0; i < v; i++) {
@@ -23,7 +23,7 @@ public class Undirected_DFS_Cycle_Detection {
     public static void main(String[] args) {
 
         int node = 4;
-        Undirected_DFS_Cycle_Detection u = new Undirected_DFS_Cycle_Detection(node);
+        L3_Undirected_DFS_Cycle_Detection u = new L3_Undirected_DFS_Cycle_Detection(node);
 
 //        Cycle Not present
 //        addEdge(0,1);

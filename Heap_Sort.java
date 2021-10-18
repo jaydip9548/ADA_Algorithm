@@ -1,47 +1,52 @@
 import java.util.*;
 import java.text.DecimalFormat;
+
 public class Heap_Sort {
-	
-	public static void main(String [] args){
-	
-	int arr[] = {20,50,30,75,90,60,25,10,40};
-	int n = arr.length;
-	
-	for(int i = n/2 - 1; i>=0; i--){
-	    maxHeapify(arr,n,i);
-	}
-		System.out.println(Arrays.toString(arr));
-	
-	for(int i=n-1; i>=0; i--){
-	    swap(arr,i,0);
-	    maxHeapify(arr,i,0);
-	}
-	
 
-}
+    static int arr[] = {90, 80, 70, 60, 50, 40, 30, 20, 10};
+    static int n = arr.length;
 
-public static void maxHeapify(int arr[],int n,int i){
-    int largest = i;
-    int left = 2 * i + 1;
-    int right = 2*i + 2;
-    
-    while(left < n && arr[left] > arr[largest]){
-        largest = left;
-    }
-    
-    while(right < n && arr[right] >  arr[largest]){
-        largest = right;
-    }
-    if(largest != i){
-        swap(arr,largest,i);
-        maxHeapify(arr,n,largest);
-    }
-}
+    //    Left Child : 2i + 1 && Right Child : 2i + 2;
+    public static void main(String[] args) {
 
-public static void swap(int arr[],int l,int i){
-    int temp  = arr[l];
-    arr[l] = arr[i];
-    arr[i] = temp;
-}
+        int j = n - 1;
+        for (int i = n / 2 - 1; n > 0; ) {
+//        get the largest element at first pos
+            heapSort(i, j);
+
+//        swap that ele at end index j
+            swap(0, j);
+            j--;
+//        updating n with without considering last swap element
+            n = j + 1;
+        }
+
+        System.out.println(Arrays.toString(arr));
+    }
+
+    private static void heapSort(int i, int bound) {
+
+        for (int j = i; j >= 0; j--) {
+            int left = 2 * j + 1;
+            int right = 2 * j + 2;
+//            Left Child
+            if (left <= bound && arr[j] < arr[left]) {
+                swap(j, left);
+            }
+            if (right <= bound && arr[j] < arr[right]) {
+                swap(j, right);
+            }
+
+        }
+
+
+    }
+
+    private static void swap(int j, int left) {
+
+        int temp = arr[j];
+        arr[j] = arr[left];
+        arr[left] = temp;
+    }
 }
 

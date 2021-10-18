@@ -2,18 +2,17 @@ package Graph;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 import java.util.Stack;
 
 //https://youtu.be/nt8uN6pQrnw
 
 
-public class Adjacency_List {
+public class L1_Adjacency_List {
 
     private static LinkedList<Integer> adj[];
 
 
-    public Adjacency_List(int v) {
+    public L1_Adjacency_List(int v) {
         adj = new LinkedList[v];
 
         for (int i = 0; i < v; i++) {
@@ -111,7 +110,7 @@ public class Adjacency_List {
         int v = 5;
         int e = 6;
 
-        Adjacency_List list = new Adjacency_List(v);
+        L1_Adjacency_List list = new L1_Adjacency_List(v);
 
         list.addEdge(0, 1);
         list.addEdge(1, 2);
