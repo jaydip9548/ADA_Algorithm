@@ -1,3 +1,5 @@
+package Graph;
+
 import java.util.ArrayList;
 
 public class DFS {
@@ -22,7 +24,7 @@ public class DFS {
 //		Pop the Stack
 
 		int node = stack.remove(stack.size() - 1);
-		System.out.println("DFS Order is(Starting From 0th Node) : ");
+		System.out.println("Graph.DFS Order is(Starting From 0th Node) : ");
 		System.out.println(node);
 
 		while (true) {

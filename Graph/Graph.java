@@ -1,3 +1,4 @@
+package Graph;
 
 import java.util.*;
 
@@ -18,7 +19,7 @@ class Graph {
   int vertices, edges;
   Edge edge[];
 
-  // Graph creation
+  // Graph.Graph creation
   Graph(int v, int e) {
     vertices = v;
     edges = e;

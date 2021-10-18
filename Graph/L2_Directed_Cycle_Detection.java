@@ -2,7 +2,7 @@ package Graph;
 
 import java.util.LinkedList;
 
-// DFS Algo
+// Graph.DFS Algo
 
 public class L2_Directed_Cycle_Detection {
 

@@ -42,7 +42,7 @@ public class Prims_Algo {
 			}
 			}
 
-	System.out.println("The Graph with minimum weighted node  is ");
+	System.out.println("The Graph.Graph with minimum weighted node  is ");
 	for(int i=1;i<V;i++) {
 		
 		int p = parent[i];
@@ -62,7 +62,7 @@ public class Prims_Algo {
 //				{0,1,7},{0,2,8},{1,2,3},{1,3,6},{2,3,4},{2,4,3},{3,4,2},{3,5,5},{4,5,2}
 //		};
 		
-		//Matrix Of Graph
+		//Matrix Of Graph.Graph
 		int matrix[][] = {
 				{0,13,8,1,0,0},
 				{13,0,15,0,0,0},

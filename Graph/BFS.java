@@ -1,3 +1,5 @@
+package Graph;
+
 import java.util.*;
 
 public class BFS {
@@ -30,7 +32,7 @@ public class BFS {
 
 //		Dequeue node 0
 		int node = queue.remove(0);
-		System.out.println("BFS Order (Starting From 0th node) : ");
+		System.out.println("Graph.BFS Order (Starting From 0th node) : ");
 		System.out.println(node);
 
 		while (true) {

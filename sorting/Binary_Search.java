@@ -1,3 +1,5 @@
+package sorting;
+
 import java.util.*;
 public class Binary_Search {
 	public static void search(int a[], int n,int item) {
